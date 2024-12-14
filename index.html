@@ -11,23 +11,26 @@
             color: white;
             text-align: center;
             direction: rtl;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Syria_%281930–1958%2C_1961–1963%29.svg');
-            background-size: cover;
-            background-position: center;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: black; /* Hintergrundfarbe als Basis */
+            overflow: hidden; /* Verhindert das Scrollen durch den rotierenden Hintergrund */
         }
 
-        #overlay {
+        #rotated-background {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg); /* Rotation um 90 Grad */
+            width: 120%; /* Vergrößert, um sicherzustellen, dass der gesamte Bereich abgedeckt ist */
+            height: 120%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Syria_%281930–1958%2C_1961–1963%29.svg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Transparenz */
+            z-index: -1; /* Hintergrund hinter den Inhalt schieben */
         }
 
         #fact-container {
@@ -52,7 +55,7 @@
     </style>
 </head>
 <body>
-    <div id="overlay"></div>
+    <div id="rotated-background"></div>
     <div id="fact-container">
         <h1>قصة سوريا الحرة</h1>
         <p>بدأت الثورة السورية في عام 2011 ضد نظام الأسد.</p>
