@@ -9,48 +9,47 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: white;
-            text-align: center;
             direction: rtl;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black; /* Basisfarbe des Hintergrunds */
-            overflow: hidden;
+            overflow-x: hidden;
+        }
+
+        /* Parallaxen-Hintergrund */
+        .parallax {
             position: relative;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            z-index: -1;
         }
 
-        #background-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%; /* Skaliert die Größe des Hintergrundbildes */
-            opacity: 0.2; /* Transparenz */
-            z-index: -1; /* Hintergrund bleibt hinter dem Text */
-        }
-
-        #fact-container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+        /* Inhaltselement */
+        .content {
+            position: relative;
+            padding: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund für Lesbarkeit */
+            margin: 50px auto;
             border-radius: 10px;
             max-width: 80%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-            overflow-y: auto; /* Ermöglicht Scrollen, falls der Text zu lang ist */
-            max-height: 80vh;
-            z-index: 1;
         }
 
-        h1 {
+        /* Textelemente */
+        h1, h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
 
         p {
             font-size: 1.5rem;
             line-height: 1.8;
+            margin: 20px 0;
         }
 
+        /* Video */
         iframe {
             width: 100%;
             height: 315px;
@@ -59,29 +58,62 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
+
+        /* Abschnitte */
+        section {
+            margin: 0;
+            padding: 100px 0;
+            min-height: 100vh;
+        }
     </style>
 </head>
 <body>
-    <!-- Hintergrundbild -->
-    <img id="background-image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg" alt="Syrien Karte">
+    <!-- Parallax Hintergrund -->
+    <div class="parallax"></div>
 
-    <!-- Container für Text -->
-    <div id="fact-container">
-        <h1>قصة سوريا الحرة</h1>
-        <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
+    <!-- Abschnitt 1 -->
+    <section>
+        <div class="content">
+            <h1>قصة سوريا الحرة</h1>
+            <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
+            <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+            <p>في هذا الفيديو، يمكنكم معرفة المزيد عن تفاصيل المرحلة الأولى من الثورة السورية.</p>
+        </div>
+    </section>
 
-        <!-- Eingebettetes Video -->
-        <iframe 
-            src="https://www.youtube.com/embed/EKXGl67zSEk" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+    <!-- Abschnitt 2 -->
+    <section>
+        <div class="content">
+            <h2>الاستقلال في عام 1946</h2>
+            <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل ضد الاحتلال الفرنسي.</p>
+            <p>كان هذا الاستقلال بداية لحقبة جديدة، ولكنها لم تخلُ من التحديات السياسية والعسكرية.</p>
+        </div>
+    </section>
 
-        <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل.</p>
-        <p>في الستينيات، شهدت البلاد انقلابات عسكرية وتغيرات سياسية متكررة.</p>
-        <p>في عام 1970، تولى حافظ الأسد الحكم، مما أدى إلى تأسيس حكم استبدادي طويل.</p>
-        <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
-        <p>اليوم، لا تزال سوريا تعاني من آثار الحرب والصراعات، لكن أمل الشعب السوري في الحرية لا يزال قائما.</p>
-    </div>
+    <!-- Abschnitt 3 -->
+    <section>
+        <div class="content">
+            <h2>انقلاب الستينيات</h2>
+            <p>في الستينيات، شهدت البلاد سلسلة من الانقلابات العسكرية التي غيرت مسار السياسة السورية.</p>
+            <iframe src="https://www.youtube.com/embed/another-video-id"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Abschnitt 4 -->
+    <section>
+        <div class="content">
+            <h2>الثورة السورية</h2>
+            <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
+            <p>لا تزال آثار هذه الثورة والصراع قائمة حتى اليوم.</p>
+        </div>
+    </section>
+
+    <!-- Weitere Inhalte können hinzugefügt werden -->
 </body>
 </html>
