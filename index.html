@@ -15,23 +15,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: black; /* Hintergrundfarbe als Basis */
-            overflow: hidden; /* Verhindert Scrollen durch das Bild */
+            background-color: black; /* Basisfarbe des Hintergrunds */
+            overflow: hidden;
             position: relative;
         }
 
-        #rotated-background {
+        #background-image {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 20%; /* Vergrößert das Bild, damit es skaliert wird */
-            height: 20%; /* Passt das Bild proportional an */
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg');
-            background-size: cover; /* Skaliert das Bild gleichmäßig */
-            background-position: center; /* Zentriert das Bild */
-            #transform: rotate(90deg); /* Dreht das Bild um 90 Grad */
-            opacity: 0.5; /* Transparenz */
-            z-index: -1; /* Stellt sicher, dass es hinter dem Inhalt bleibt */
+            transform: translate(-50%, -50%);
+            width: 80%; /* Skaliert die Größe des Hintergrundbildes */
+            opacity: 0.2; /* Transparenz */
+            z-index: -1; /* Hintergrund bleibt hinter dem Text */
         }
 
         #fact-container {
@@ -42,7 +38,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
             overflow-y: auto; /* Ermöglicht Scrollen, falls der Text zu lang ist */
             max-height: 80vh;
-            z-index: 1; /* Überlagert den Hintergrund */
+            z-index: 1;
         }
 
         h1 {
@@ -57,16 +53,18 @@
     </style>
 </head>
 <body>
-    <div id="rotated-background"></div>
+    <!-- Hintergrundbild -->
+    <img id="background-image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg" alt="Syrien Karte">
+
+    <!-- Container für Text -->
     <div id="fact-container">
         <h1>قصة سوريا الحرة</h1>
-        <p>بدأت الثورة السورية في عام 2011 ضد نظام الأسد.</p>
-        <p>أدت الاحتجاجات السلمية إلى قمع دموي من قبل النظام.</p>
-        <p>تم استخدام الأسلحة الكيميائية ضد المدنيين في الغوطة عام 2013.</p>
-        <p>ساهمت العديد من المنظمات الدولية في دعم اللاجئين السوريين.</p>
-        <p>فر ملايين السوريين من منازلهم بسبب الحرب.</p>
-        <p>قُتل أكثر من 500,000 شخص خلال النزاع السوري.</p>
-        <p>تمثل الثورة السورية رمزا للمقاومة ضد الاستبداد.</p>
+        <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
+        <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل.</p>
+        <p>في الستينيات، شهدت البلاد انقلابات عسكرية وتغيرات سياسية متكررة.</p>
+        <p>في عام 1970، تولى حافظ الأسد الحكم، مما أدى إلى تأسيس حكم استبدادي طويل.</p>
+        <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
+        <p>اليوم، لا تزال سوريا تعاني من آثار الحرب والصراعات، لكن أمل الشعب السوري في الحرية لا يزال قائما.</p>
     </div>
 </body>
 </html>
