@@ -10,46 +10,37 @@
             font-family: Arial, sans-serif;
             color: white;
             direction: rtl;
-            overflow-x: hidden;
-        }
-
-        /* Parallaxen-Hintergrund */
-        .parallax {
-            position: relative;
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100vh;
-            z-index: -1;
+            background-attachment: fixed; /* Fixiert den Hintergrund */
+            background-size: cover; /* Deckt den gesamten Bereich */
+            background-repeat: repeat-y; /* Wiederholt das Bild vertikal */
+            background-position: center; /* Zentriert das Bild */
         }
 
-        /* Inhaltselement */
-        .content {
-            position: relative;
-            padding: 50px;
+        /* Styling für die Abschnitte */
+        section {
+            padding: 100px 20px;
+            min-height: 100vh; /* Jede Section nimmt mindestens die volle Höhe ein */
+            background: rgba(0, 0, 0, 0.7); /* Transparente dunkle Schicht */
+            margin: 0 auto;
             text-align: center;
-            background: rgba(0, 0, 0, 0.7); /* Dunkler Hintergrund für Lesbarkeit */
-            margin: 50px auto;
-            border-radius: 10px;
-            max-width: 80%;
+            max-width: 800px; /* Beschränkt die Breite der Inhalte */
+            border-radius: 10px; /* Abgerundete Ecken */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        /* Textelemente */
+        /* Überschriften und Texte */
         h1, h2 {
             font-size: 2.5rem;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 1.5rem;
             line-height: 1.8;
-            margin: 20px 0;
         }
 
-        /* Video */
+        /* Eingebettetes Video */
         iframe {
             width: 100%;
             height: 315px;
@@ -58,62 +49,42 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
-
-        /* Abschnitte */
-        section {
-            margin: 0;
-            padding: 100px 0;
-            min-height: 100vh;
-        }
     </style>
 </head>
 <body>
-    <!-- Parallax Hintergrund -->
-    <div class="parallax"></div>
-
     <!-- Abschnitt 1 -->
     <section>
-        <div class="content">
-            <h1>قصة سوريا الحرة</h1>
-            <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
-            <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-            <p>في هذا الفيديو، يمكنكم معرفة المزيد عن تفاصيل المرحلة الأولى من الثورة السورية.</p>
-        </div>
+        <h1>قصة سوريا الحرة</h1>
+        <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
+        <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <p>في هذا الفيديو، يمكنكم معرفة المزيد عن تفاصيل المرحلة الأولى من الثورة السورية.</p>
     </section>
 
     <!-- Abschnitt 2 -->
     <section>
-        <div class="content">
-            <h2>الاستقلال في عام 1946</h2>
-            <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل ضد الاحتلال الفرنسي.</p>
-            <p>كان هذا الاستقلال بداية لحقبة جديدة، ولكنها لم تخلُ من التحديات السياسية والعسكرية.</p>
-        </div>
+        <h2>الاستقلال في عام 1946</h2>
+        <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل ضد الاحتلال الفرنسي.</p>
+        <p>كان هذا الاستقلال بداية لحقبة جديدة، ولكنها لم تخلُ من التحديات السياسية والعسكرية.</p>
     </section>
 
     <!-- Abschnitt 3 -->
     <section>
-        <div class="content">
-            <h2>انقلاب الستينيات</h2>
-            <p>في الستينيات، شهدت البلاد سلسلة من الانقلابات العسكرية التي غيرت مسار السياسة السورية.</p>
-            <iframe src="https://www.youtube.com/embed/another-video-id"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
+        <h2>انقلاب الستينيات</h2>
+        <p>في الستينيات، شهدت البلاد سلسلة من الانقلابات العسكرية التي غيرت مسار السياسة السورية.</p>
+        <iframe src="https://www.youtube.com/embed/another-video-id"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
     </section>
 
     <!-- Abschnitt 4 -->
     <section>
-        <div class="content">
-            <h2>الثورة السورية</h2>
-            <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
-            <p>لا تزال آثار هذه الثورة والصراع قائمة حتى اليوم.</p>
-        </div>
+        <h2>الثورة السورية</h2>
+        <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
+        <p>لا تزال آثار هذه الثورة والصراع قائمة حتى اليوم.</p>
     </section>
-
-    <!-- Weitere Inhalte können hinzugefügt werden -->
 </body>
 </html>
