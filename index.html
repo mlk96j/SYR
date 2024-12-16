@@ -19,7 +19,7 @@
             top: 0;
             right: 0;
             width: 100%; /* Deckt die gesamte Breite */
-            background: rgba(0, 0, 0, 0.8); /* Halbtransparenter Hintergrund */
+            background-color: #013220; /* Dunkelgrüner Hintergrund */
             color: white;
             display: flex;
             align-items: center;
@@ -27,6 +27,11 @@
             padding: 10px 20px;
             z-index: 10;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+            transition: transform 0.3s ease-in-out; /* Animation beim Verstecken */
+        }
+
+        .hidden {
+            transform: translateY(-100%); /* Versteckt den Header */
         }
 
         .header img {
@@ -53,6 +58,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
+        section + section {
+            margin-top: 50px; /* Abstand zwischen Abschnitten */
+            border-top: 2px solid #fff; /* Trennlinie zwischen Abschnitten */
+            padding-top: 50px; /* Abstand oberhalb des Inhalts */
+        }
+
         /* Textelemente */
         h2 {
             font-size: 2.5rem;
@@ -62,6 +73,17 @@
         p {
             font-size: 1.5rem;
             line-height: 1.8;
+        }
+
+        /* Link-Stil */
+        a {
+            color: #1e90ff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #ffcc00;
         }
 
         /* Eingebettetes Video */
@@ -77,7 +99,7 @@
 </head>
 <body>
     <!-- Header-Bereich -->
-    <div class="header">
+    <div class="header" id="header">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg" alt="Logo">
         <h1>قصة سوريا الحرة</h1>
     </div>
@@ -85,12 +107,11 @@
     <!-- Abschnitt 1 -->
     <section>
         <h2>بداية القصة</h2>
-        <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
-        <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-        <p>في هذا الفيديو، يمكنكم معرفة المزيد عن تفاصيل المرحلة الأولى من الثورة السورية.</p>
+        <p>
+            بعد نهاية الحكم العثماني في عام 1918، 
+            أصبحت سوريا تحت الانتداب الفرنسي. لمزيد من المعلومات، 
+            <a href="https://ar.wikipedia.org/wiki/تاريخ_سوريا_في_القرن_العشرين" target="_blank">اضغط هنا</a>.
+        </p>
     </section>
 
     <!-- Abschnitt 2 -->
@@ -104,7 +125,7 @@
     <section>
         <h2>انقلاب الستينيات</h2>
         <p>في الستينيات، شهدت البلاد سلسلة من الانقلابات العسكرية التي غيرت مسار السياسة السورية.</p>
-        <iframe src="https://www.youtube.com/embed/another-video-id"
+        <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
@@ -116,5 +137,21 @@
         <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
         <p>لا تزال آثار هذه الثورة والصراع قائمة حتى اليوم.</p>
     </section>
+
+    <script>
+        // JavaScript für Header-Sichtbarkeit
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                header.classList.add('hidden'); // Header verstecken
+            } else {
+                header.classList.remove('hidden'); // Header zeigen
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
