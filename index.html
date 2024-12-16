@@ -10,11 +10,7 @@
             font-family: Arial, sans-serif;
             color: white;
             direction: rtl;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg');
-            background-attachment: fixed; /* Fixierter Hintergrund */
-            background-size: cover; /* Deckt den gesamten Bereich */
-            background-repeat: repeat-y; /* Wiederholt das Bild vertikal */
-            background-position: center; /* Zentriert das Bild */
+            background-color: #013220; /* Dunkelgrüner Hintergrund */
         }
 
         /* Header-Stil */
@@ -27,7 +23,7 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: flex-end; /* Inhalte nach rechts ausrichten */
+            justify-content: space-between; /* Platzierung: Logo rechts, Titel mittig */
             padding: 10px 20px;
             z-index: 10;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
@@ -35,13 +31,14 @@
 
         .header img {
             height: 50px; /* Logo-Größe */
-            margin-left: 15px; /* Abstand zum Titel */
             border-radius: 5px;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            flex-grow: 1; /* Dehnt den Titel in die Mitte aus */
+            text-align: center;
         }
 
         /* Styling für Abschnitte */
