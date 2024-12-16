@@ -15,7 +15,7 @@
 
         /* Header-Stil */
         .header {
-            position: fixed; /* Fixiert den Header */
+            position: fixed; /* Fixierter Header */
             top: 0;
             right: 0;
             width: 100%; /* Deckt die gesamte Breite */
@@ -27,7 +27,7 @@
             padding: 10px 20px;
             z-index: 10;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
-            transition: transform 0.3s ease-in-out; /* Animation beim Verstecken */
+            transition: transform 0.5s ease-in-out; /* Weichere Animation */
         }
 
         .hidden {
@@ -108,8 +108,14 @@
     <section>
         <h2>بداية القصة</h2>
         <p>
-            بعد نهاية الحكم العثماني في عام 1918، 
-            أصبحت سوريا تحت الانتداب الفرنسي. لمزيد من المعلومات، 
+            بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.
+        </p>
+        <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <p>
+            لمزيد من المعلومات، 
             <a href="https://ar.wikipedia.org/wiki/تاريخ_سوريا_في_القرن_العشرين" target="_blank">اضغط هنا</a>.
         </p>
     </section>
@@ -145,10 +151,12 @@
 
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                header.classList.add('hidden'); // Header verstecken
-            } else {
-                header.classList.remove('hidden'); // Header zeigen
+            if (scrollTop > 100) { // Header verschwindet erst nach Scrollen über 100px
+                if (scrollTop > lastScrollTop) {
+                    header.classList.add('hidden'); // Header verstecken
+                } else {
+                    header.classList.remove('hidden'); // Header zeigen
+                }
             }
             lastScrollTop = scrollTop;
         });
