@@ -15,64 +15,69 @@
 
         /* Header-Stil */
         .header {
-            position: fixed; /* Fixierter Header */
+            position: fixed;
             top: 0;
             right: 0;
-            width: 100%; /* Deckt die gesamte Breite */
-            background-color: #013220; /* Dunkelgrüner Hintergrund */
+            width: 100%;
+            background-color: #013220;
             color: white;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Platzierung: Logo rechts, Titel mittig */
+            justify-content: space-between;
             padding: 10px 20px;
             z-index: 10;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
-            transition: transform 0.5s ease-in-out; /* Weichere Animation */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease-in-out;
         }
 
         .hidden {
-            transform: translateY(-100%); /* Versteckt den Header */
+            transform: translateY(-100%);
         }
 
         .header img {
-            height: 50px; /* Logo-Größe */
+            height: 50px;
             border-radius: 5px;
         }
 
         .header h1 {
             margin: 0;
             font-size: 1.8rem;
-            flex-grow: 1; /* Dehnt den Titel in die Mitte aus */
+            flex-grow: 1;
             text-align: center;
         }
 
         /* Styling für Abschnitte */
         section {
-            padding: 100px 20px;
-            min-height: 100vh;
-            background: rgba(0, 0, 0, 0.7); /* Transparenter dunkler Hintergrund */
-            margin: 0 auto;
-            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.7);
             max-width: 800px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
         }
 
         section + section {
-            margin-top: 50px; /* Abstand zwischen Abschnitten */
-            border-top: 2px solid #fff; /* Trennlinie zwischen Abschnitten */
-            padding-top: 50px; /* Abstand oberhalb des Inhalts */
+            margin-top: 20px;
+        }
+
+        /* Titel in einer Box */
+        .title-box {
+            background-color: #fff; /* Weiße Box für Titel */
+            color: #013220; /* Dunkelgrüne Schrift */
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px; /* Abstand zum Text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         /* Textelemente */
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
         p {
             font-size: 1.5rem;
             line-height: 1.8;
+            margin-bottom: 20px; /* Abstand zwischen Abschnitten */
         }
 
         /* Link-Stil */
@@ -106,7 +111,7 @@
 
     <!-- Abschnitt 1 -->
     <section>
-        <h2>بداية القصة</h2>
+        <div class="title-box">بداية القصة</div>
         <p>
             بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.
         </p>
@@ -122,14 +127,14 @@
 
     <!-- Abschnitt 2 -->
     <section>
-        <h2>الاستقلال في عام 1946</h2>
+        <div class="title-box">الاستقلال في عام 1946</div>
         <p>في عام 1946، حصلت سوريا على استقلالها الكامل بعد نضال طويل ضد الاحتلال الفرنسي.</p>
         <p>كان هذا الاستقلال بداية لحقبة جديدة، ولكنها لم تخلُ من التحديات السياسية والعسكرية.</p>
     </section>
 
     <!-- Abschnitt 3 -->
     <section>
-        <h2>انقلاب الستينيات</h2>
+        <div class="title-box">انقلاب الستينيات</div>
         <p>في الستينيات، شهدت البلاد سلسلة من الانقلابات العسكرية التي غيرت مسار السياسة السورية.</p>
         <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -139,7 +144,7 @@
 
     <!-- Abschnitt 4 -->
     <section>
-        <h2>الثورة السورية</h2>
+        <div class="title-box">الثورة السورية</div>
         <p>اندلعت الثورة السورية في عام 2011 ضد نظام بشار الأسد، مما أدى إلى أزمة إنسانية كبرى.</p>
         <p>لا تزال آثار هذه الثورة والصراع قائمة حتى اليوم.</p>
     </section>
@@ -151,11 +156,11 @@
 
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > 100) { // Header verschwindet erst nach Scrollen über 100px
+            if (scrollTop > 100) { 
                 if (scrollTop > lastScrollTop) {
-                    header.classList.add('hidden'); // Header verstecken
+                    header.classList.add('hidden');
                 } else {
-                    header.classList.remove('hidden'); // Header zeigen
+                    header.classList.remove('hidden');
                 }
             }
             lastScrollTop = scrollTop;
