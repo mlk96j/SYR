@@ -11,26 +11,53 @@
             color: white;
             direction: rtl;
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg');
-            background-attachment: fixed; /* Fixiert den Hintergrund */
+            background-attachment: fixed; /* Fixierter Hintergrund */
             background-size: cover; /* Deckt den gesamten Bereich */
             background-repeat: repeat-y; /* Wiederholt das Bild vertikal */
             background-position: center; /* Zentriert das Bild */
         }
 
-        /* Styling für die Abschnitte */
+        /* Header-Stil */
+        .header {
+            position: fixed; /* Fixiert den Header */
+            top: 0;
+            right: 0;
+            width: 100%; /* Deckt die gesamte Breite */
+            background: rgba(0, 0, 0, 0.8); /* Halbtransparenter Hintergrund */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Inhalte nach rechts ausrichten */
+            padding: 10px 20px;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Schatteneffekt */
+        }
+
+        .header img {
+            height: 50px; /* Logo-Größe */
+            margin-left: 15px; /* Abstand zum Titel */
+            border-radius: 5px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Styling für Abschnitte */
         section {
             padding: 100px 20px;
-            min-height: 100vh; /* Jede Section nimmt mindestens die volle Höhe ein */
-            background: rgba(0, 0, 0, 0.7); /* Transparente dunkle Schicht */
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.7); /* Transparenter dunkler Hintergrund */
             margin: 0 auto;
             text-align: center;
-            max-width: 800px; /* Beschränkt die Breite der Inhalte */
-            border-radius: 10px; /* Abgerundete Ecken */
+            max-width: 800px;
+            border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        /* Überschriften und Texte */
-        h1, h2 {
+        /* Textelemente */
+        h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
@@ -52,9 +79,15 @@
     </style>
 </head>
 <body>
+    <!-- Header-Bereich -->
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_map_of_Syria_%281930–1958%2C_1961–1963%29.svg" alt="Logo">
+        <h1>قصة سوريا الحرة</h1>
+    </div>
+
     <!-- Abschnitt 1 -->
     <section>
-        <h1>قصة سوريا الحرة</h1>
+        <h2>بداية القصة</h2>
         <p>بعد نهاية الحكم العثماني في عام 1918، أصبحت سوريا تحت الانتداب الفرنسي.</p>
         <iframe src="https://www.youtube.com/embed/EKXGl67zSEk" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
