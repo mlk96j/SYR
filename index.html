@@ -125,7 +125,7 @@
         }
         /* Stil für النص المختصر */ 
         .short-text { 
-            display: none; 
+            display: block; 
         } 
         .show-more { 
             color: #1e90ff; 
@@ -152,7 +152,7 @@
                 منطقة سوريا تعد واحدة من أقدم المناطق المأهولة في العالم.
                 بدأت الاستيطان البشري فيها منذ العصر الحجري، حيث تم اكتشاف مواقع أثرية تعود إلى ما يزيد عن 700,000 سنة قبل الميلاد.
             </p>
-            <p class="full-text" style="display: none;">
+            <p class="full-text">
                 من أبرز الحضارات القديمة التي نشأت في سوريا حضارة إيبلا التي ازدهرت في شمال سوريا حوالي 3000 قبل الميلاد. في العصور اللاحقة،
                 شهدت المنطقة سيطرة العديد من الإمبراطوريات مثل الأكاديين، البابليين، الآشوريين، والفرس. في القرن الرابع قبل الميلاد، أصبحت سوريا جزءًا من الإمبراطورية الإغريقية تحت حكم الإسكندر الأكبر،
                 ثم الرومان في القرن الأول قبل الميلاد. بعد ذلك، سيطر البيزنطيون على المنطقة حتى الفتح الإسلامي في القرن السابع الميلادي.
@@ -301,11 +301,9 @@
             const fullText = element.previousElementSibling; 
             if (fullText.style.display === "none") { 
                 fullText.style.display = "block"; 
-                shortText.style.display = "none"; 
                 element.textContent = "اعرض أقل"; 
             } else { 
                 fullText.style.display = "none"; 
-                shortText.style.display = "block"; 
                 element.textContent = "اعرض المزيد"; 
             } 
         }
