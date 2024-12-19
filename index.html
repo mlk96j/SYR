@@ -124,13 +124,22 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
         /* Stil für النص المختصر */ 
-        .short-text { 
-            display: block; 
-        } 
-        .show-more { 
-            color: #1e90ff; 
-            cursor: pointer; 
-            text-decoration: underline; 
+       .text {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* عرض أول سطرين */
+            -webkit-box-orient: vertical;
+        }
+        .text.expanded {
+            -webkit-line-clamp: unset; /* إظهار النص كاملاً عند التوسيع */
+        }
+        .toggle-btn {
+            cursor: pointer;
+            color: blue;
+            border: none;
+            background: none;
+            padding: 0;
+            font-size: 16px;
         }
         
     </style>
@@ -148,18 +157,16 @@
         <!-- Abschnitt 0 -->
         <section>
             <div class="title-box">سوريا تاريخيا</div>
-            <p class="short-text">
+            <div class="text" id="text1">
                 منطقة سوريا تعد واحدة من أقدم المناطق المأهولة في العالم.
                 بدأت الاستيطان البشري فيها منذ العصر الحجري، حيث تم اكتشاف مواقع أثرية تعود إلى ما يزيد عن 700,000 سنة قبل الميلاد.
-            </p>
-            <p class="full-text">
                 من أبرز الحضارات القديمة التي نشأت في سوريا حضارة إيبلا التي ازدهرت في شمال سوريا حوالي 3000 قبل الميلاد. في العصور اللاحقة،
                 شهدت المنطقة سيطرة العديد من الإمبراطوريات مثل الأكاديين، البابليين، الآشوريين، والفرس. في القرن الرابع قبل الميلاد، أصبحت سوريا جزءًا من الإمبراطورية الإغريقية تحت حكم الإسكندر الأكبر،
                 ثم الرومان في القرن الأول قبل الميلاد. بعد ذلك، سيطر البيزنطيون على المنطقة حتى الفتح الإسلامي في القرن السابع الميلادي.
                 في العصور الوسطى، كانت سوريا جزءًا من الدولة الأموية ثم العباسية، وتعرضت لاحقًا للحملات الصليبية. في النهاية،
               أصبحت سوريا جزءًا من الدولة العثمانية في القرن السادس عشر واستمرت تحت حكمها حتى نهاية الحرب العالمية الأولى.
-            </p>
-            <span class="show-more" onclick="toggleText(this)">اعرض المزيد</span>
+             </div>
+             <button class="toggle-btn" onclick="toggleText('text1', this)">عرض المزيد</button>
             <p>
                 لمزيد من التفاصيل عن استقلال سوريا، 
                 <a href="https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%B3%D9%88%D8%B1%D9%8A%D8%A7">اضغط هنا</a>.
@@ -296,15 +303,14 @@
         window.addEventListener('scroll', onScroll);
         onScroll(); // Initial check
         // JavaScript für "اعرض المزيد" Funktion
-        function toggleText(element) { 
-            const fullText = element.previousElementSibling; 
-            if (fullText.style.display === "none") { 
-                fullText.style.display = "block"; 
-                element.textContent = "اعرض أقل"; 
-            } else { 
-                fullText.style.display = "none"; 
-                element.textContent = "اعرض المزيد"; 
-            } 
+        function toggleText(textId, button) {
+            const textElement = document.getElementById(textId);
+            textElement.classList.toggle('expanded');
+            if (textElement.classList.contains('expanded')) {
+                button.textContent = 'عرض أقل';
+            } else {
+                button.textContent = 'عرض المزيد';
+            }
         }
     </script>
 </body>
